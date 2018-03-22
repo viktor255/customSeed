@@ -7,6 +7,7 @@ import { TimeConfigsComponent } from "./timeConfig/timeConfigs.component";
 import { TimeConfigListComponent } from "./timeConfig/timeConfig-list.component";
 import { TimeConfigInputComponent } from "./timeConfig/timeConfig-input.component";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
     declarations: [
@@ -19,7 +20,8 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
     imports: [
         BrowserModule,
         FormsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        HttpClientModule
     ],
     bootstrap: [AppComponent]
 })

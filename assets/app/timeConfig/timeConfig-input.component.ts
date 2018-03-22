@@ -36,8 +36,14 @@ export class TimeConfigInputComponent implements OnInit{
         }*/
         this.timeConfig = new TimeConfig(this.myForm.value.time, this.myForm.value.temperature);
         console.log(this.timeConfig);
-        this.timeConfigService.addTimeConfig(this.timeConfig);
+
+        this.timeConfigService.addTimeConfig(this.timeConfig)
+            .subscribe(
+              data => console.log(data),
+              error => console.error(error),
+            );
         this.myForm.reset();
+
     }
 
     ngOnInit() {

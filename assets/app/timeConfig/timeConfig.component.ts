@@ -31,7 +31,10 @@ export class TimeConfigComponent {
     }
 
     onDelete() {
-        this.timeConfigService.deleteTimeConfig(this.timeConfig);
+        this.timeConfigService.deleteTimeConfig(this.timeConfig)
+            .subscribe(
+                result => console.log(result)
+            );
     }
 
 }

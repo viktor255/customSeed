@@ -19,8 +19,13 @@ export class TimeConfigListComponent implements OnInit{
     constructor(private timeConfigService: TimeConfigService){}
 
     ngOnInit(){
-        this.timeConfigs = this.timeConfigService.getTimeConfigs();
-        console.log(this.timeConfigs);
+        this.timeConfigService.getTimeConfigs()
+            .subscribe((timeConfigs: TimeConfig[]) => {
+                this.timeConfigs = timeConfigs;
+                console.log(this.timeConfigs);
+            });
+        // this.timeConfigs = this.timeConfigService.getTimeConfigs();
+
     }
 
 }
